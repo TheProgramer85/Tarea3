@@ -1,25 +1,26 @@
 import java.util.ArrayList;
 
+/*
+ *@Deposito es una clase que interactua con Expendedor
+ *@return:
+ */
+
 class Deposito{
     private ArrayList<Producto> al;
     public Deposito(){ al = new ArrayList<>(); }
     public void addProducto(Producto b){ al.add(b); }
     public Producto getProducto(){
-
-        if(al.size()==0) return null;
+        if (al.size()) return null;
 
         Producto b = al.remove(0);
         return b;
     }
-}
-class DepositoM{
-    private ArrayList<Moneda> mon;
-    public DepositoM(){ mon = new ArrayList(); }
-    public void addMoneda(Moneda b){ mon.add(b); }
-    public Moneda getMoneda(){
-        if(mon.size()==0) return null;
+    public Producto getProductoEn(int n){
+        if (n>=al.size()) return new NoProducto(0,0,0,0);
 
-        Moneda b = mon.remove(0);
-        return b;
+        else return al.get(n);
+    }
+    public int getStorage(){
+        return al.size();
     }
 }
