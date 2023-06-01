@@ -4,6 +4,14 @@
  * @sonido recibe lo que se esta consumiendo
  * @vuelto hace el pago
  **/
+// Enum para representar los sabores de los productos
+public enum Sabor {
+    COCACOLA,
+    SPRITE,
+    SUPER8,
+    RAYITA
+}
+
 public class Comprador{
     private Producto producto, Pcomparacion;
     private Expendedor exp;
@@ -66,7 +74,8 @@ public class Comprador{
     public int getcountm100(){return countm100;}
     public int getcountm500(){return countm500;}
     public int getcountb1000(){return countb1000;}
-    public void comprarProducto(int Sabor) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException, YaComproException, ProductoNoDisponibleExcepcion {
+    public void comprarProducto(Sabor sabor) throws NoHayProductoException, PagoIncorrectoException, PagoInsuficienteException, YaComproException, ProductoNoDisponibleExcepcion {
+        // Utilizar el enum Sabor en la lógica de compra del producto
         exp.comprarProducto(Sabor);
     }
     public Moneda getMonedaby(Moneda m){

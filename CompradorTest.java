@@ -1,14 +1,28 @@
-package org.example;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import static org.junit.jupiter.api.Assertions.*;
+public class CompradorTest {
 
-class CompradorTest {
+    // Declarar los atributos necesarios para el test
+    private Expendedor expendedor;
+    private Comprador comprador;
 
-    @org.junit.jupiter.api.BeforeEach
-    void setUp() {
+    @Before
+    public void setUp(){ // Inicializar los objetos necesarios para el test
+        expendedor = new Expendedor(/* Parámetros de inicialización */);
+        comprador = new Comprador(expendedor);
+    }
+    @Test
+    public void testComprarProducto() {
+        // Realizar las acciones necesarias para probar el método comprarProducto()
+        // y verificar que los resultados sean los esperados
+        // ...
+    }
+    @Test
+    public void testRecojeProducto() {
+        // Realizar las acciones necesarias para probar el método recojeProducto()
+        // y verificar que los resultados sean los esperados
     }
 
-    @org.junit.jupiter.api.AfterEach
-    void tearDown() {
-    }
+    // Otros tests unitarios para los demás métodos de la clase Comprador
 }
